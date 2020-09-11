@@ -14,12 +14,20 @@
         <maven.compiler.target>11</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-        <quarkus-plugin.version>1.7.1.Final</quarkus-plugin.version>
+        <quarkus-plugin.version>1.7.3.Final</quarkus-plugin.version>
         <quarkus.platform.artifact-id>quarkus-universe-bom</quarkus.platform.artifact-id>
         <quarkus.platform.group-id>io.quarkus</quarkus.platform.group-id>
-        <quarkus.platform.version>1.7.1.Final</quarkus.platform.version>
+        <quarkus.platform.version>1.7.3.Final</quarkus.platform.version>
         <surefire-plugin.version>3.0.0-M5</surefire-plugin.version>
+        <release-plugin.version>3.0.0-M1</release-plugin.version>
     </properties>
+
+    <scm>
+        <connection>scm:git:https://github.com/cssrumi/airq-parent-pom.git</connection>
+        <url>https://github.com/cssrumi/airq-parent-pom.git</url>
+        <developerConnection>scm:git:https://github.com/cssrumi/airq-parent-pom.git</developerConnection>
+    </scm>
+
     <dependencyManagement>
         <dependencies>
             <dependency>
@@ -61,6 +69,11 @@
                         <maven.home>${maven.home}</maven.home>
                     </systemPropertyVariables>
                 </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-release-plugin</artifactId>
+                <version>${release-plugin.version}</version>
             </plugin>
         </plugins>
     </build>
